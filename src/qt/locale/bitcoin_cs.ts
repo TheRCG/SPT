@@ -4,13 +4,13 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About Spaincoin</source>
-        <translation>O Spaincoinu</translation>
+        <source>About Spots2</source>
+        <translation>O Spots2u</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;Spaincoin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;Spaincoin&lt;/b&gt; verze</translation>
+        <source>&lt;b&gt;Spots2&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;Spots2&lt;/b&gt; verze</translation>
     </message>
     <message>
         <location line="+57"/>
@@ -34,8 +34,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="+0"/>
-        <source>The Spaincoin developers</source>
-        <translation>Vývojáři Spaincoinu</translation>
+        <source>The Spots2 developers</source>
+        <translation>Vývojáři Spots2u</translation>
     </message>
 </context>
 <context>
@@ -67,8 +67,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="+63"/>
-        <source>These are your Spaincoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Tohle jsou tvé Spaincoinové adresy pro příjem plateb. Můžeš dát pokaždé každému plátci novou adresu, abys věděl, kdo ti kdy kolik platil.</translation>
+        <source>These are your Spots2 addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Tohle jsou tvé Spots2ové adresy pro příjem plateb. Můžeš dát pokaždé každému plátci novou adresu, abys věděl, kdo ti kdy kolik platil.</translation>
     </message>
     <message>
         <location filename="../forms/addressbookpage.ui" line="+14"/>
@@ -82,8 +82,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a Spaincoin address</source>
-        <translation>Podepiš zprávu, čímž prokážeš, že jsi vlastníkem Spaincoinové adresy</translation>
+        <source>Sign a message to prove you own a Spots2 address</source>
+        <translation>Podepiš zprávu, čímž prokážeš, že jsi vlastníkem Spots2ové adresy</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -107,8 +107,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="-44"/>
-        <source>Verify a message to ensure it was signed with a specified Spaincoin address</source>
-        <translation>Ověř zprávu, aby ses ujistil, že byla podepsána danou Spaincoinovou adresou</translation>
+        <source>Verify a message to ensure it was signed with a specified Spots2 address</source>
+        <translation>Ověř zprávu, aby ses ujistil, že byla podepsána danou Spots2ovou adresou</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -122,8 +122,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="-5"/>
-        <source>These are your Spaincoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Tohle jsou tvé Spaincoinové adresy pro posílání plateb. Před odesláním mincí si vždy zkontroluj částku a cílovou adresu.</translation>
+        <source>These are your Spots2 addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Tohle jsou tvé Spots2ové adresy pro posílání plateb. Před odesláním mincí si vždy zkontroluj částku a cílovou adresu.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -248,8 +248,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="+1"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SPAINCOINS&lt;/b&gt;!</source>
-        <translation>Varování: Pokud si zašifruješ peněženku a ztratíš či zapomeneš heslo, &lt;b&gt;PŘIJDEŠ O VŠECHNY SPAINCOINY&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SPOTS&lt;/b&gt;!</source>
+        <translation>Varování: Pokud si zašifruješ peněženku a ztratíš či zapomeneš heslo, &lt;b&gt;PŘIJDEŠ O VŠECHNY SPOTY&lt;/b&gt;!</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -275,8 +275,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="-56"/>
-        <source>Spaincoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your spaincoins from being stolen by malware infecting your computer.</source>
-        <translation>Spaincoin se teď ukončí, aby dokončil zašifrování. Pamatuj však, že pouhé zašifrování peněženky úplně nezabraňuje krádeži tvých spaincoinů malwarem, kterým se může počítač nakazit.</translation>
+        <source>Spots2 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your spots2s from being stolen by malware infecting your computer.</source>
+        <translation>Spots2 se teď ukončí, aby dokončil zašifrování. Pamatuj však, že pouhé zašifrování peněženky úplně nezabraňuje krádeži tvých spots2ů malwarem, kterým se může počítač nakazit.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -374,8 +374,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about Spaincoin</source>
-        <translation>Zobraz informace o Spaincoinu</translation>
+        <source>Show information about Spots2</source>
+        <translation>Zobraz informace o Spots2u</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -419,13 +419,13 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="-347"/>
-        <source>Send coins to a Spaincoin address</source>
-        <translation>Pošli mince na Spaincoinovou adresu</translation>
+        <source>Send coins to a Spots2 address</source>
+        <translation>Pošli mince na Spots2ovou adresu</translation>
     </message>
     <message>
         <location line="+49"/>
-        <source>Modify configuration options for Spaincoin</source>
-        <translation>Uprav nastavení Spaincoinu</translation>
+        <source>Modify configuration options for Spots2</source>
+        <translation>Uprav nastavení Spots2u</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -455,8 +455,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     <message>
         <location line="-165"/>
         <location line="+530"/>
-        <source>Spaincoin</source>
-        <translation>Spaincoin</translation>
+        <source>Spots2</source>
+        <translation>Spots2</translation>
     </message>
     <message>
         <location line="-530"/>
@@ -480,8 +480,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="+22"/>
-        <source>&amp;About Spaincoin</source>
-        <translation>O &amp;Spaincoinu</translation>
+        <source>&amp;About Spots2</source>
+        <translation>O &amp;Spots2u</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -500,13 +500,13 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign messages with your Spaincoin addresses to prove you own them</source>
-        <translation>Podepiš zprávy svými Spaincoinovými adresami, čímž prokážeš, že jsi jejich vlastníkem</translation>
+        <source>Sign messages with your Spots2 addresses to prove you own them</source>
+        <translation>Podepiš zprávy svými Spots2ovými adresami, čímž prokážeš, že jsi jejich vlastníkem</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified Spaincoin addresses</source>
-        <translation>Ověř zprávy, aby ses ujistil, že byly podepsány danými Spaincoinovými adresami</translation>
+        <source>Verify messages to ensure they were signed with specified Spots2 addresses</source>
+        <translation>Ověř zprávy, aby ses ujistil, že byly podepsány danými Spots2ovými adresami</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -536,13 +536,13 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="+47"/>
-        <source>Spaincoin client</source>
-        <translation>Spaincoin klient</translation>
+        <source>Spots2 client</source>
+        <translation>Spots2 klient</translation>
     </message>
     <message numerus="yes">
         <location line="+141"/>
-        <source>%n active connection(s) to Spaincoin network</source>
-        <translation><numerusform>%n aktivní spojení do Spaincoinové sítě</numerusform><numerusform>%n aktivní spojení do Spaincoinové sítě</numerusform><numerusform>%n aktivních spojení do Spaincoinové sítě</numerusform></translation>
+        <source>%n active connection(s) to Spots2 network</source>
+        <translation><numerusform>%n aktivní spojení do Spots2ové sítě</numerusform><numerusform>%n aktivní spojení do Spots2ové sítě</numerusform><numerusform>%n aktivních spojení do Spots2ové sítě</numerusform></translation>
     </message>
     <message>
         <location line="+22"/>
@@ -656,8 +656,8 @@ Adresa: %4
     <message>
         <location line="-23"/>
         <location line="+23"/>
-        <source>URI can not be parsed! This can be caused by an invalid Spaincoin address or malformed URI parameters.</source>
-        <translation>Nepodařilo se analyzovat URI! Důvodem může být neplatná Spaincoinová adresa nebo poškozené parametry URI.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid Spots2 address or malformed URI parameters.</source>
+        <translation>Nepodařilo se analyzovat URI! Důvodem může být neplatná Spots2ová adresa nebo poškozené parametry URI.</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -671,8 +671,8 @@ Adresa: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+111"/>
-        <source>A fatal error occurred. Spaincoin can no longer continue safely and will quit.</source>
-        <translation>Stala se fatální chyba. Spaincoin nemůže bezpečně pokračovat v činnosti, a proto skončí.</translation>
+        <source>A fatal error occurred. Spots2 can no longer continue safely and will quit.</source>
+        <translation>Stala se fatální chyba. Spots2 nemůže bezpečně pokračovat v činnosti, a proto skončí.</translation>
     </message>
 </context>
 <context>
@@ -737,8 +737,8 @@ Adresa: %4
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid Spaincoin address.</source>
-        <translation>Zadaná adresa &quot;%1&quot; není platná Spaincoinová adresa.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid Spots2 address.</source>
+        <translation>Zadaná adresa &quot;%1&quot; není platná Spots2ová adresa.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -756,8 +756,8 @@ Adresa: %4
     <message>
         <location filename="../guiutil.cpp" line="+424"/>
         <location line="+12"/>
-        <source>Spaincoin-Qt</source>
-        <translation>Spaincoin-Qt</translation>
+        <source>Spots2-Qt</source>
+        <translation>Spots2-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -819,13 +819,13 @@ Adresa: %4
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start Spaincoin after logging in to the system.</source>
-        <translation>Automaticky spustí Spaincoin po přihlášení do systému.</translation>
+        <source>Automatically start Spots2 after logging in to the system.</source>
+        <translation>Automaticky spustí Spots2 po přihlášení do systému.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start Spaincoin on system login</source>
-        <translation>S&amp;pustit Spaincoin po přihlášení do systému</translation>
+        <source>&amp;Start Spots2 on system login</source>
+        <translation>S&amp;pustit Spots2 po přihlášení do systému</translation>
     </message>
     <message>
         <location line="+35"/>
@@ -844,7 +844,7 @@ Adresa: %4
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the Spaincoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the Spots2 client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>Automaticky otevře potřebný port na routeru. Tohle funguje jen za předpokladu, že tvůj router podporuje UPnP a že je UPnP povolené.</translation>
     </message>
     <message>
@@ -854,8 +854,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the Spaincoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Připojí se do Spaincoinové sítě přes SOCKS proxy (např. když se připojuje přes Tor).</translation>
+        <source>Connect to the Spots2 network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Připojí se do Spots2ové sítě přes SOCKS proxy (např. když se připojuje přes Tor).</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -929,8 +929,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting Spaincoin.</source>
-        <translation>Tady lze nastavit jazyk uživatelského rozhraní. Nastavení se projeví až po restartování Spaincoinu.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting Spots2.</source>
+        <translation>Tady lze nastavit jazyk uživatelského rozhraní. Nastavení se projeví až po restartování Spots2u.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -944,8 +944,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show Spaincoin addresses in the transaction list or not.</source>
-        <translation>Zda ukazovat spaincoinové adresy ve výpisu transakcí nebo ne.</translation>
+        <source>Whether to show Spots2 addresses in the transaction list or not.</source>
+        <translation>Zda ukazovat spots2ové adresy ve výpisu transakcí nebo ne.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -996,8 +996,8 @@ Adresa: %4
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting Spaincoin.</source>
-        <translation>Nastavení se projeví až po restartování Spaincoinu.</translation>
+        <source>This setting will take effect after restarting Spots2.</source>
+        <translation>Nastavení se projeví až po restartování Spots2u.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1015,8 +1015,8 @@ Adresa: %4
     <message>
         <location line="+50"/>
         <location line="+166"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Spaincoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Zobrazené informace nemusí být aktuální. Tvá peněženka se automaticky sesynchronizuje s Spaincoinovou sítí, jakmile se s ní spojí. Zatím ale ještě není synchronizace dokončena.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Spots2 network after a connection is established, but this process has not completed yet.</source>
+        <translation>Zobrazené informace nemusí být aktuální. Tvá peněženka se automaticky sesynchronizuje s Spots2ovou sítí, jakmile se s ní spojí. Zatím ale ještě není synchronizace dokončena.</translation>
     </message>
     <message>
         <location line="-124"/>
@@ -1069,8 +1069,8 @@ Adresa: %4
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start spaincoin: click-to-pay handler</source>
-        <translation>Nemůžu spustit spaincoin: obsluha click-to-pay</translation>
+        <source>Cannot start spots2: click-to-pay handler</source>
+        <translation>Nemůžu spustit spots2: obsluha click-to-pay</translation>
     </message>
 </context>
 <context>
@@ -1219,8 +1219,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the Spaincoin-Qt help message to get a list with possible Spaincoin command-line options.</source>
-        <translation>Seznam parametrů Spaincoinu pro příkazovou řádku získáš v nápovědě Spaincoinu Qt.</translation>
+        <source>Show the Spots2-Qt help message to get a list with possible Spots2 command-line options.</source>
+        <translation>Seznam parametrů Spots2u pro příkazovou řádku získáš v nápovědě Spots2u Qt.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1239,13 +1239,13 @@ Adresa: %4
     </message>
     <message>
         <location line="-104"/>
-        <source>Spaincoin - Debug window</source>
-        <translation>Spaincoin - ladicí okno</translation>
+        <source>Spots2 - Debug window</source>
+        <translation>Spots2 - ladicí okno</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>Spaincoin Core</source>
-        <translation>Jádro Spaincoinu</translation>
+        <source>Spots2 Core</source>
+        <translation>Jádro Spots2u</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1254,8 +1254,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the Spaincoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Otevři soubor s ladicími záznamy Spaincoinu z aktuálního datového adresáře. U velkých logů to může pár vteřin zabrat.</translation>
+        <source>Open the Spots2 debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Otevři soubor s ladicími záznamy Spots2u z aktuálního datového adresáře. U velkých logů to může pár vteřin zabrat.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1264,8 +1264,8 @@ Adresa: %4
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-30"/>
-        <source>Welcome to the Spaincoin RPC console.</source>
-        <translation>Vítej v Spaincoinové RPC konzoli.</translation>
+        <source>Welcome to the Spots2 RPC console.</source>
+        <translation>Vítej v Spots2ové RPC konzoli.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1448,8 +1448,8 @@ Adresa: %4
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a Spaincoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Zadej Spaincoinovou adresu (např. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a Spots2 address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Zadej Spots2ovou adresu (např. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
 </context>
 <context>
@@ -1513,8 +1513,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Spaincoin address</source>
-        <translation>Podepiš zprávu, čímž prokážeš, že jsi vlastníkem této Spaincoinové adresy</translation>
+        <source>Sign the message to prove you own this Spots2 address</source>
+        <translation>Podepiš zprávu, čímž prokážeš, že jsi vlastníkem této Spots2ové adresy</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1549,8 +1549,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified Spaincoin address</source>
-        <translation>Ověř zprávu, aby ses ujistil, že byla podepsána danou Spaincoinovou adresou</translation>
+        <source>Verify the message to ensure it was signed with the specified Spots2 address</source>
+        <translation>Ověř zprávu, aby ses ujistil, že byla podepsána danou Spots2ovou adresou</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1565,8 +1565,8 @@ Adresa: %4
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a Spaincoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Zadej Spaincoinovou adresu (např. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a Spots2 address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Zadej Spots2ovou adresu (např. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -1575,8 +1575,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter Spaincoin signature</source>
-        <translation>Vlož Spaincoinový podpis</translation>
+        <source>Enter Spots2 signature</source>
+        <translation>Vlož Spots2ový podpis</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -1649,8 +1649,8 @@ Adresa: %4
     <name>SplashScreen</name>
     <message>
         <location filename="../splashscreen.cpp" line="+22"/>
-        <source>The Spaincoin developers</source>
-        <translation>Vývojáři Spaincoinu</translation>
+        <source>The Spots2 developers</source>
+        <translation>Vývojáři Spots2u</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2187,8 +2187,8 @@ Adresa: %4
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+94"/>
-        <source>Spaincoin version</source>
-        <translation>Verze Spaincoinu</translation>
+        <source>Spots2 version</source>
+        <translation>Verze Spots2u</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -2197,8 +2197,8 @@ Adresa: %4
     </message>
     <message>
         <location line="-29"/>
-        <source>Send command to -server or spaincoind</source>
-        <translation>Poslat příkaz pro -server nebo spaincoind</translation>
+        <source>Send command to -server or spots2d</source>
+        <translation>Poslat příkaz pro -server nebo spots2d</translation>
     </message>
     <message>
         <location line="-23"/>
@@ -2217,13 +2217,13 @@ Adresa: %4
     </message>
     <message>
         <location line="+24"/>
-        <source>Specify configuration file (default: spaincoin.conf)</source>
-        <translation>Konfigurační soubor (výchozí: spaincoin.conf)</translation>
+        <source>Specify configuration file (default: spots2.conf)</source>
+        <translation>Konfigurační soubor (výchozí: spots2.conf)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: spaincoind.pid)</source>
-        <translation>PID soubor (výchozí: spaincoind.pid)</translation>
+        <source>Specify pid file (default: spots2d.pid)</source>
+        <translation>PID soubor (výchozí: spots2d.pid)</translation>
     </message>
     <message>
         <location line="-1"/>
@@ -2300,24 +2300,24 @@ Adresa: %4
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=spaincoinrpc
+rpcuser=spots2rpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;Spaincoin Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;Spots2 Alert&quot; admin@foo.com
 </source>
         <translation>%s, musíš nastavit rpcpassword v konfiguračním souboru:
 %s
 Je vhodné použít následující náhodné heslo:
-rpcuser=spaincoinrpc
+rpcuser=spots2rpc
 rpcpassword=%s
 (není potřeba si ho pamatovat)
 rpcuser a rpcpassword NESMÍ být stejné.
 Pokud konfigurační soubor ještě neexistuje, vytvoř ho tak, aby ho mohl číst pouze vlastník.
 Je také doporučeno si nastavit alertnotify, abys byl upozorněn na případné problémy;
-například: alertnotify=echo %%s | mail -s &quot;Spaincoin Alert&quot; admin@foo.com
+například: alertnotify=echo %%s | mail -s &quot;Spots2 Alert&quot; admin@foo.com
 </translation>
     </message>
     <message>
@@ -2332,8 +2332,8 @@ například: alertnotify=echo %%s | mail -s &quot;Spaincoin Alert&quot; admin@fo
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. Spaincoin is probably already running.</source>
-        <translation>Nedaří se mi získat zámek na datový adresář %s. Spaincoin pravděpodobně už jednou běží.</translation>
+        <source>Cannot obtain a lock on data directory %s. Spots2 is probably already running.</source>
+        <translation>Nedaří se mi získat zámek na datový adresář %s. Spots2 pravděpodobně už jednou běží.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2377,8 +2377,8 @@ například: alertnotify=echo %%s | mail -s &quot;Spaincoin Alert&quot; admin@fo
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Spaincoin will not work properly.</source>
-        <translation>Upozornění: Zkontroluj, že máš v počítači správně nastavený datum a čas! Pokud jsou nastaveny špatně, Spaincoin nebude fungovat správně.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Spots2 will not work properly.</source>
+        <translation>Upozornění: Zkontroluj, že máš v počítači správně nastavený datum a čas! Pokud jsou nastaveny špatně, Spots2 nebude fungovat správně.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2627,8 +2627,8 @@ například: alertnotify=echo %%s | mail -s &quot;Spaincoin Alert&quot; admin@fo
     </message>
     <message>
         <location line="+5"/>
-        <source>SSL options: (see the Spaincoin Wiki for SSL setup instructions)</source>
-        <translation>Možnosti SSL: (viz instrukce nastavení SSL v Spaincoin Wiki)</translation>
+        <source>SSL options: (see the Spots2 Wiki for SSL setup instructions)</source>
+        <translation>Možnosti SSL: (viz instrukce nastavení SSL v Spots2 Wiki)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2817,13 +2817,13 @@ například: alertnotify=echo %%s | mail -s &quot;Spaincoin Alert&quot; admin@fo
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of Spaincoin</source>
-        <translation>Chyba při načítání wallet.dat: peněženka vyžaduje novější verzi Spaincoinu</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of Spots2</source>
+        <translation>Chyba při načítání wallet.dat: peněženka vyžaduje novější verzi Spots2u</translation>
     </message>
     <message>
         <location line="+93"/>
-        <source>Wallet needed to be rewritten: restart Spaincoin to complete</source>
-        <translation>Soubor s peněženkou potřeboval přepsat: restartuj Spaincoin, aby se operace dokončila</translation>
+        <source>Wallet needed to be rewritten: restart Spots2 to complete</source>
+        <translation>Soubor s peněženkou potřeboval přepsat: restartuj Spots2, aby se operace dokončila</translation>
     </message>
     <message>
         <location line="-95"/>
@@ -2882,8 +2882,8 @@ například: alertnotify=echo %%s | mail -s &quot;Spaincoin Alert&quot; admin@fo
     </message>
     <message>
         <location line="-25"/>
-        <source>Unable to bind to %s on this computer. Spaincoin is probably already running.</source>
-        <translation>Nedaří se mi připojit na %s na tomhle počítači. Spaincoin už pravděpodobně jednou běží.</translation>
+        <source>Unable to bind to %s on this computer. Spots2 is probably already running.</source>
+        <translation>Nedaří se mi připojit na %s na tomhle počítači. Spots2 už pravděpodobně jednou běží.</translation>
     </message>
     <message>
         <location line="+64"/>

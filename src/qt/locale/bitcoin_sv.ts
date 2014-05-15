@@ -4,13 +4,13 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About Spaincoin</source>
-        <translation>Om Spaincoin</translation>
+        <source>About Spots2</source>
+        <translation>Om Spots2</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;Spaincoin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;Spaincoin&lt;/b&gt;-version</translation>
+        <source>&lt;b&gt;Spots2&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;Spots2&lt;/b&gt;-version</translation>
     </message>
     <message>
         <location line="+57"/>
@@ -35,8 +35,8 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="+0"/>
-        <source>The Spaincoin developers</source>
-        <translation>Spaincoin-utvecklarna</translation>
+        <source>The Spots2 developers</source>
+        <translation>Spots2-utvecklarna</translation>
     </message>
 </context>
 <context>
@@ -68,8 +68,8 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="+63"/>
-        <source>These are your Spaincoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Detta är dina Spaincoin-adresser för att ta emot betalningar.  Du kan ge varje avsändare en egen adress så att du kan hålla reda på vem som betalar dig.</translation>
+        <source>These are your Spots2 addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Detta är dina Spots2-adresser för att ta emot betalningar.  Du kan ge varje avsändare en egen adress så att du kan hålla reda på vem som betalar dig.</translation>
     </message>
     <message>
         <location filename="../forms/addressbookpage.ui" line="+14"/>
@@ -83,7 +83,7 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a Spaincoin address</source>
+        <source>Sign a message to prove you own a Spots2 address</source>
         <translation>Signera ett meddelande för att bevisa att du äger denna adress</translation>
     </message>
     <message>
@@ -108,8 +108,8 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="-44"/>
-        <source>Verify a message to ensure it was signed with a specified Spaincoin address</source>
-        <translation>Verifiera meddelandet för att vara säker på att den var signerad med den specificerade Spaincoin-adressen</translation>
+        <source>Verify a message to ensure it was signed with a specified Spots2 address</source>
+        <translation>Verifiera meddelandet för att vara säker på att den var signerad med den specificerade Spots2-adressen</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -123,8 +123,8 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="-5"/>
-        <source>These are your Spaincoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Detta är dina Spaincoin adresser för att skicka betalningar. Kolla alltid summan och den mottagande adressen innan du skickar Spaincoins.</translation>
+        <source>These are your Spots2 addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Detta är dina Spots2 adresser för att skicka betalningar. Kolla alltid summan och den mottagande adressen innan du skickar Spots2s.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -139,7 +139,7 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     <message>
         <location line="+1"/>
         <source>Send &amp;Coins</source>
-        <translation>Skicka &amp;Spaincoins</translation>
+        <translation>Skicka &amp;Spots2s</translation>
     </message>
     <message>
         <location line="+260"/>
@@ -249,7 +249,7 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="+1"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SPAINCOINS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SPOTS&lt;/b&gt;!</source>
         <translation>VARNING: Om du krypterar din plånbok och glömmer ditt lösenord, kommer du att &lt;b&gt;FÖRLORA ALLA DINA TILLGÅNGAR&lt;/b&gt;!</translation>
     </message>
     <message>
@@ -276,7 +276,7 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="-56"/>
-        <source>Spaincoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your spaincoins from being stolen by malware infecting your computer.</source>
+        <source>Spots2 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your spots2s from being stolen by malware infecting your computer.</source>
         <translation>Programmet kommer nu att stänga ner för att färdigställa krypteringen. Tänk på att en krypterad plånbok inte skyddar mot stöld om din dator är infekterad med en keylogger.</translation>
     </message>
     <message>
@@ -375,8 +375,8 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about Spaincoin</source>
-        <translation>Visa information om Spaincoin</translation>
+        <source>Show information about Spots2</source>
+        <translation>Visa information om Spots2</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -420,13 +420,13 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="-347"/>
-        <source>Send coins to a Spaincoin address</source>
-        <translation>Skicka mynt till en Spaincoin-adress</translation>
+        <source>Send coins to a Spots2 address</source>
+        <translation>Skicka mynt till en Spots2-adress</translation>
     </message>
     <message>
         <location line="+49"/>
-        <source>Modify configuration options for Spaincoin</source>
-        <translation>Ändra konfigurationsalternativ för Spaincoin</translation>
+        <source>Modify configuration options for Spots2</source>
+        <translation>Ändra konfigurationsalternativ för Spots2</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -456,8 +456,8 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     <message>
         <location line="-165"/>
         <location line="+530"/>
-        <source>Spaincoin</source>
-        <translation>Spaincoin</translation>
+        <source>Spots2</source>
+        <translation>Spots2</translation>
     </message>
     <message>
         <location line="-530"/>
@@ -481,8 +481,8 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="+22"/>
-        <source>&amp;About Spaincoin</source>
-        <translation>&amp;Om Spaincoin</translation>
+        <source>&amp;About Spots2</source>
+        <translation>&amp;Om Spots2</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -501,13 +501,13 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign messages with your Spaincoin addresses to prove you own them</source>
-        <translation>Signera meddelanden med din Spaincoinadress för att bevisa att du äger dem</translation>
+        <source>Sign messages with your Spots2 addresses to prove you own them</source>
+        <translation>Signera meddelanden med din Spots2adress för att bevisa att du äger dem</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified Spaincoin addresses</source>
-        <translation>Verifiera meddelanden för att vara säker på att de var signerade med den specificerade Spaincoin-adressen</translation>
+        <source>Verify messages to ensure they were signed with specified Spots2 addresses</source>
+        <translation>Verifiera meddelanden för att vara säker på att de var signerade med den specificerade Spots2-adressen</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -537,13 +537,13 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="+47"/>
-        <source>Spaincoin client</source>
-        <translation>Spaincoin-klient</translation>
+        <source>Spots2 client</source>
+        <translation>Spots2-klient</translation>
     </message>
     <message numerus="yes">
         <location line="+141"/>
-        <source>%n active connection(s) to Spaincoin network</source>
-        <translation><numerusform>%n aktiv anslutning till Spaincoin-nätverket</numerusform><numerusform>%n aktiva anslutningar till Spaincoin-nätverket</numerusform></translation>
+        <source>%n active connection(s) to Spots2 network</source>
+        <translation><numerusform>%n aktiv anslutning till Spots2-nätverket</numerusform><numerusform>%n aktiva anslutningar till Spots2-nätverket</numerusform></translation>
     </message>
     <message>
         <location line="+22"/>
@@ -657,8 +657,8 @@ Adress: %4
     <message>
         <location line="-23"/>
         <location line="+23"/>
-        <source>URI can not be parsed! This can be caused by an invalid Spaincoin address or malformed URI parameters.</source>
-        <translation>URI går inte att tolkas! Detta kan orsakas av en ogiltig Spaincoin-adress eller felaktiga URI parametrar.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid Spots2 address or malformed URI parameters.</source>
+        <translation>URI går inte att tolkas! Detta kan orsakas av en ogiltig Spots2-adress eller felaktiga URI parametrar.</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -672,8 +672,8 @@ Adress: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+111"/>
-        <source>A fatal error occurred. Spaincoin can no longer continue safely and will quit.</source>
-        <translation>Ett allvarligt fel har uppstått. Spaincoin kan inte längre köras säkert och kommer att avslutas.</translation>
+        <source>A fatal error occurred. Spots2 can no longer continue safely and will quit.</source>
+        <translation>Ett allvarligt fel har uppstått. Spots2 kan inte längre köras säkert och kommer att avslutas.</translation>
     </message>
 </context>
 <context>
@@ -738,8 +738,8 @@ Adress: %4
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid Spaincoin address.</source>
-        <translation>Den angivna adressen &quot;%1&quot; är inte en giltig Spaincoin-adress.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid Spots2 address.</source>
+        <translation>Den angivna adressen &quot;%1&quot; är inte en giltig Spots2-adress.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -757,8 +757,8 @@ Adress: %4
     <message>
         <location filename="../guiutil.cpp" line="+424"/>
         <location line="+12"/>
-        <source>Spaincoin-Qt</source>
-        <translation>Spaincoin-Qt</translation>
+        <source>Spots2-Qt</source>
+        <translation>Spots2-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -820,13 +820,13 @@ Adress: %4
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start Spaincoin after logging in to the system.</source>
-        <translation>Starta Spaincoin automatiskt efter inloggning.</translation>
+        <source>Automatically start Spots2 after logging in to the system.</source>
+        <translation>Starta Spots2 automatiskt efter inloggning.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start Spaincoin on system login</source>
-        <translation>&amp;Starta Spaincoin vid systemstart</translation>
+        <source>&amp;Start Spots2 on system login</source>
+        <translation>&amp;Starta Spots2 vid systemstart</translation>
     </message>
     <message>
         <location line="+35"/>
@@ -845,8 +845,8 @@ Adress: %4
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the Spaincoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Öppna automatiskt Spaincoin-klientens port på routern. Detta fungerar endast om din router har UPnP aktiverat.</translation>
+        <source>Automatically open the Spots2 client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Öppna automatiskt Spots2-klientens port på routern. Detta fungerar endast om din router har UPnP aktiverat.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -855,8 +855,8 @@ Adress: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the Spaincoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Anslut till Spaincoin-nätverket genom en SOCKS-proxy (t.ex. när du ansluter genom Tor).</translation>
+        <source>Connect to the Spots2 network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Anslut till Spots2-nätverket genom en SOCKS-proxy (t.ex. när du ansluter genom Tor).</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -930,8 +930,8 @@ Adress: %4
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting Spaincoin.</source>
-        <translation>Användargränssnittets språk kan ställas in här. Denna inställning träder i kraft efter en omstart av Spaincoin.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting Spots2.</source>
+        <translation>Användargränssnittets språk kan ställas in här. Denna inställning träder i kraft efter en omstart av Spots2.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -945,8 +945,8 @@ Adress: %4
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show Spaincoin addresses in the transaction list or not.</source>
-        <translation>Anger om Spaincoin-adresser skall visas i transaktionslistan.</translation>
+        <source>Whether to show Spots2 addresses in the transaction list or not.</source>
+        <translation>Anger om Spots2-adresser skall visas i transaktionslistan.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -997,8 +997,8 @@ Adress: %4
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting Spaincoin.</source>
-        <translation>Denna inställning träder i kraft efter en omstart av Spaincoin.</translation>
+        <source>This setting will take effect after restarting Spots2.</source>
+        <translation>Denna inställning träder i kraft efter en omstart av Spots2.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1016,8 +1016,8 @@ Adress: %4
     <message>
         <location line="+50"/>
         <location line="+166"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Spaincoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Den visade informationen kan vara inaktuell. Plånboken synkroniseras automatiskt med Spaincoin-nätverket efter att anslutningen är upprättad, men denna process har inte slutförts ännu.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Spots2 network after a connection is established, but this process has not completed yet.</source>
+        <translation>Den visade informationen kan vara inaktuell. Plånboken synkroniseras automatiskt med Spots2-nätverket efter att anslutningen är upprättad, men denna process har inte slutförts ännu.</translation>
     </message>
     <message>
         <location line="-124"/>
@@ -1070,8 +1070,8 @@ Adress: %4
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start spaincoin: click-to-pay handler</source>
-        <translation>Kan inte starta spaincoin: klicka-och-betala handhavare</translation>
+        <source>Cannot start spots2: click-to-pay handler</source>
+        <translation>Kan inte starta spots2: klicka-och-betala handhavare</translation>
     </message>
 </context>
 <context>
@@ -1220,8 +1220,8 @@ Adress: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the Spaincoin-Qt help message to get a list with possible Spaincoin command-line options.</source>
-        <translation>Visa Spaincoin-Qt hjälpmeddelande för att få en lista med möjliga Spaincoin kommandoradsalternativ.</translation>
+        <source>Show the Spots2-Qt help message to get a list with possible Spots2 command-line options.</source>
+        <translation>Visa Spots2-Qt hjälpmeddelande för att få en lista med möjliga Spots2 kommandoradsalternativ.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1240,13 +1240,13 @@ Adress: %4
     </message>
     <message>
         <location line="-104"/>
-        <source>Spaincoin - Debug window</source>
-        <translation>Spaincoin - Debug fönster</translation>
+        <source>Spots2 - Debug window</source>
+        <translation>Spots2 - Debug fönster</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>Spaincoin Core</source>
-        <translation>Spaincoin Kärna</translation>
+        <source>Spots2 Core</source>
+        <translation>Spots2 Kärna</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1255,8 +1255,8 @@ Adress: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the Spaincoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Öppna Spaincoin debug-loggfilen som finns i datakatalogen. Detta kan ta några sekunder för stora loggfiler.</translation>
+        <source>Open the Spots2 debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Öppna Spots2 debug-loggfilen som finns i datakatalogen. Detta kan ta några sekunder för stora loggfiler.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1265,8 +1265,8 @@ Adress: %4
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-30"/>
-        <source>Welcome to the Spaincoin RPC console.</source>
-        <translation>Välkommen till Spaincoin RPC-konsollen.</translation>
+        <source>Welcome to the Spots2 RPC console.</source>
+        <translation>Välkommen till Spots2 RPC-konsollen.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1449,8 +1449,8 @@ Adress: %4
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a Spaincoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Ange en Spaincoin-adress (t.ex. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a Spots2 address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Ange en Spots2-adress (t.ex. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
 </context>
 <context>
@@ -1514,7 +1514,7 @@ Adress: %4
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Spaincoin address</source>
+        <source>Sign the message to prove you own this Spots2 address</source>
         <translation>Signera meddelandet för att bevisa att du äger denna adress</translation>
     </message>
     <message>
@@ -1550,8 +1550,8 @@ Adress: %4
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified Spaincoin address</source>
-        <translation>Verifiera meddelandet för att vara säker på att den var signerad med den angivna Spaincoin-adressen</translation>
+        <source>Verify the message to ensure it was signed with the specified Spots2 address</source>
+        <translation>Verifiera meddelandet för att vara säker på att den var signerad med den angivna Spots2-adressen</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1566,8 +1566,8 @@ Adress: %4
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a Spaincoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Ange en Spaincoin-adress (t.ex. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a Spots2 address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Ange en Spots2-adress (t.ex. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -1576,8 +1576,8 @@ Adress: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter Spaincoin signature</source>
-        <translation>Ange Spaincoin-signatur</translation>
+        <source>Enter Spots2 signature</source>
+        <translation>Ange Spots2-signatur</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -1650,8 +1650,8 @@ Adress: %4
     <name>SplashScreen</name>
     <message>
         <location filename="../splashscreen.cpp" line="+22"/>
-        <source>The Spaincoin developers</source>
-        <translation>Spaincoin-utvecklarna</translation>
+        <source>The Spots2 developers</source>
+        <translation>Spots2-utvecklarna</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2188,8 +2188,8 @@ Adress: %4
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+94"/>
-        <source>Spaincoin version</source>
-        <translation>Spaincoin version</translation>
+        <source>Spots2 version</source>
+        <translation>Spots2 version</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -2198,8 +2198,8 @@ Adress: %4
     </message>
     <message>
         <location line="-29"/>
-        <source>Send command to -server or spaincoind</source>
-        <translation>Skicka kommando till -server eller spaincoind</translation>
+        <source>Send command to -server or spots2d</source>
+        <translation>Skicka kommando till -server eller spots2d</translation>
     </message>
     <message>
         <location line="-23"/>
@@ -2218,13 +2218,13 @@ Adress: %4
     </message>
     <message>
         <location line="+24"/>
-        <source>Specify configuration file (default: spaincoin.conf)</source>
-        <translation>Ange konfigurationsfil (förvalt: spaincoin.conf)</translation>
+        <source>Specify configuration file (default: spots2.conf)</source>
+        <translation>Ange konfigurationsfil (förvalt: spots2.conf)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: spaincoind.pid)</source>
-        <translation>Ange pid fil (förvalt: spaincoind.pid)</translation>
+        <source>Specify pid file (default: spots2d.pid)</source>
+        <translation>Ange pid fil (förvalt: spots2d.pid)</translation>
     </message>
     <message>
         <location line="-1"/>
@@ -2301,24 +2301,24 @@ Adress: %4
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=spaincoinrpc
+rpcuser=spots2rpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;Spaincoin Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;Spots2 Alert&quot; admin@foo.com
 </source>
         <translation>%s, du behöver sätta ett rpclösensord i konfigurationsfilen:
 %s
 Det är rekommenderat att använda följande slumpade lösenord:
-rpcuser=spaincoinrpc
+rpcuser=spots2rpc
 rpcpassword=%s
 (du behöver inte komma ihåg lösenordet)
 Användarnamnet och lösenordet FÅR INTE bara detsamma.
 Om filen inte existerar, skapa den med enbart ägarläsbara filrättigheter.
 Det är också rekommenderat att sätta alertnotify så du meddelas om problem;
-till exempel: alertnotify=echo %%s | mail -s &quot;Spaincoin Alert&quot; admin@foo.com
+till exempel: alertnotify=echo %%s | mail -s &quot;Spots2 Alert&quot; admin@foo.com
 </translation>
     </message>
     <message>
@@ -2333,8 +2333,8 @@ till exempel: alertnotify=echo %%s | mail -s &quot;Spaincoin Alert&quot; admin@f
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. Spaincoin is probably already running.</source>
-        <translation>Kan inte låsa data-mappen %s. Spaincoin körs förmodligen redan.</translation>
+        <source>Cannot obtain a lock on data directory %s. Spots2 is probably already running.</source>
+        <translation>Kan inte låsa data-mappen %s. Spots2 körs förmodligen redan.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2344,7 +2344,7 @@ till exempel: alertnotify=echo %%s | mail -s &quot;Spaincoin Alert&quot; admin@f
     <message>
         <location line="+4"/>
         <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!</source>
-        <translation>Fel: Denna transaktion kräver en transaktionsavgift på minst %s på grund av dess storlek, komplexitet, eller användning av senast mottagna spaincoins!</translation>
+        <translation>Fel: Denna transaktion kräver en transaktionsavgift på minst %s på grund av dess storlek, komplexitet, eller användning av senast mottagna spots2s!</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2378,8 +2378,8 @@ till exempel: alertnotify=echo %%s | mail -s &quot;Spaincoin Alert&quot; admin@f
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Spaincoin will not work properly.</source>
-        <translation>Varning: Vänligen kolla så att din dators datum och tid är korrekt! Om din klocka går fel kommer Spaincoin inte fungera korrekt.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Spots2 will not work properly.</source>
+        <translation>Varning: Vänligen kolla så att din dators datum och tid är korrekt! Om din klocka går fel kommer Spots2 inte fungera korrekt.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2628,8 +2628,8 @@ till exempel: alertnotify=echo %%s | mail -s &quot;Spaincoin Alert&quot; admin@f
     </message>
     <message>
         <location line="+5"/>
-        <source>SSL options: (see the Spaincoin Wiki for SSL setup instructions)</source>
-        <translation>SSL-inställningar: (se Spaincoin-wikin för SSL-setup instruktioner)</translation>
+        <source>SSL options: (see the Spots2 Wiki for SSL setup instructions)</source>
+        <translation>SSL-inställningar: (se Spots2-wikin för SSL-setup instruktioner)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2818,13 +2818,13 @@ till exempel: alertnotify=echo %%s | mail -s &quot;Spaincoin Alert&quot; admin@f
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of Spaincoin</source>
-        <translation>Fel vid inläsningen av wallet.dat: Plånboken kräver en senare version av Spaincoin</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of Spots2</source>
+        <translation>Fel vid inläsningen av wallet.dat: Plånboken kräver en senare version av Spots2</translation>
     </message>
     <message>
         <location line="+93"/>
-        <source>Wallet needed to be rewritten: restart Spaincoin to complete</source>
-        <translation>Plånboken behöver skrivas om: Starta om Spaincoin för att färdigställa</translation>
+        <source>Wallet needed to be rewritten: restart Spots2 to complete</source>
+        <translation>Plånboken behöver skrivas om: Starta om Spots2 för att färdigställa</translation>
     </message>
     <message>
         <location line="-95"/>
@@ -2869,7 +2869,7 @@ till exempel: alertnotify=echo %%s | mail -s &quot;Spaincoin Alert&quot; admin@f
     <message>
         <location line="-6"/>
         <source>Insufficient funds</source>
-        <translation>Otillräckligt med spaincoins</translation>
+        <translation>Otillräckligt med spots2s</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -2883,8 +2883,8 @@ till exempel: alertnotify=echo %%s | mail -s &quot;Spaincoin Alert&quot; admin@f
     </message>
     <message>
         <location line="-25"/>
-        <source>Unable to bind to %s on this computer. Spaincoin is probably already running.</source>
-        <translation>Det går inte att binda till %s på den här datorn. Spaincoin är förmodligen redan igång.</translation>
+        <source>Unable to bind to %s on this computer. Spots2 is probably already running.</source>
+        <translation>Det går inte att binda till %s på den här datorn. Spots2 är förmodligen redan igång.</translation>
     </message>
     <message>
         <location line="+64"/>
