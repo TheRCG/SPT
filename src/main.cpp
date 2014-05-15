@@ -2962,7 +2962,7 @@ bool InitBlockIndex() {
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
 	printf("min nBit:  %08x\n", bnProofOfWorkLimit.GetCompact());
-	assert(block.hashMerkleRoot == uint256("0x8ecb02086beb1a967e7ff728c44404b5ae2ca4a06ddfd7f450e06e76678fc288"));
+	assert(block.hashMerkleRoot == uint256("0x39c9de640a6db1819e5975f787995e96a07ab57ef480a44ceef99c96d32fe89d"));
         
 	block.print();
 	assert(hash == hashGenesisBlock);
