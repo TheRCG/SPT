@@ -50,8 +50,8 @@ bool fBenchmark = false;
 bool fTxIndex = false;
 unsigned int nCoinCacheSize = 5000;
 const int64 nChainStartTimeNAdaptive = 1374380318; // Line: 2815
-const int64 nHardforkStartTime =  1400378400;  // second hardfork: to scrypt-N
-const int64 nDiffChangeTarget = 93500; // first hardfork: diff change to Digishield on block 93500
+const int64 nHardforkStartTime =  1400724000;  // hardfork: to scrypt-N
+const int64 nDiffChangeTarget = 95000; // hardfork: diff change to Digishield on block 95000
 
 /** Fees smaller than this (in satoshi) are considered zero fee (for transaction creation) */
 int64 CTransaction::nMinTxFee = 100000;
@@ -2896,10 +2896,10 @@ bool LoadBlockIndex()
 {
     if (fTestNet)
     {
-        pchMessageStart[0] = 0xfd;
-        pchMessageStart[1] = 0xc2;
-        pchMessageStart[2] = 0xb8;
-        pchMessageStart[3] = 0xdd;
+        pchMessageStart[0] = 0xfc;
+        pchMessageStart[1] = 0xc1;
+        pchMessageStart[2] = 0xb7;
+        pchMessageStart[3] = 0xdc;
         hashGenesisBlock = uint256("0x5d2fc8d1cb81c089c8dc7a71d755eb2589a7973471598dc513a599e3f0662eaf");
     }
 
@@ -2939,15 +2939,15 @@ bool InitBlockIndex() {
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
 	//printf("scriptsig size=%d\n", txNew.vin[0].scriptSig.size());    
-    txNew.vout[0].nValue = 100 * COIN;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
+    txNew.vout[0].nValue = 0;
+        txNew.vout[0].scriptPubKey = CScript() << 0x0 << OP_CHECKSIG;
         CBlock block;
         block.vtx.push_back(txNew);
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
         block.nTime    = 1374380318; //epochtime
-        block.nBits    = 0x1e0fffff;
+        block.nBits    = 0x1e0ffff0;
         block.nNonce   = 247526; 
 
         if (fTestNet)
@@ -2962,7 +2962,7 @@ bool InitBlockIndex() {
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
 	printf("min nBit:  %08x\n", bnProofOfWorkLimit.GetCompact());
-	assert(block.hashMerkleRoot == uint256("0x39c9de640a6db1819e5975f787995e96a07ab57ef480a44ceef99c96d32fe89d"));
+	assert(block.hashMerkleRoot == uint256("0x8ecb02086beb1a967e7ff728c44404b5ae2ca4a06ddfd7f450e06e76678fc288"));
         
 	block.print();
 	assert(hash == hashGenesisBlock);
@@ -3236,7 +3236,7 @@ bool static AlreadyHave(const CInv& inv)
 // The message start string is designed to be unlikely to occur in normal data.
 // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
 // a large 4-byte int at any alignment.
-unsigned char pchMessageStart[4] = { 0xfb, 0x14, 0x92, 0x00 }; // Spots2
+unsigned char pchMessageStart[4] = { 0xfb, 0xc0, 0xb6, 0xdb }; // Spots
 
 
 void static ProcessGetData(CNode* pfrom)
