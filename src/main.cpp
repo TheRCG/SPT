@@ -56,9 +56,9 @@ const int64 nHardforkStartTime = 1400724000;  // second hardfork: to scrypt-N
 const int64 nDiffChangeTarget = 95000; // first hardfork: diff change to Digishield on block 93500
 
 /** Fees smaller than this (in satoshi) are considered zero fee (for transaction creation) */
-int64 CTransaction::nMinTxFee = 100000;
+int64 CTransaction::nMinTxFee = 10000000;
 /** Fees smaller than this (in satoshi) are considered zero fee (for relaying) */
-int64 CTransaction::nMinRelayTxFee = 100000;
+int64 CTransaction::nMinRelayTxFee = 10000000;
 
 CMedianFilter<int> cPeerBlockCounts(8, 0); // Amount of blocks that other nodes claim to have
 
@@ -71,7 +71,7 @@ map<uint256, set<uint256> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "Spots2 Signed Message:\n";
+const string strMessageMagic = "Spots Signed Message:\n";
 
 double dHashesPerSec = 0.0;
 int64 nHPSTimerStart = 0;
