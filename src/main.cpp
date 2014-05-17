@@ -15,6 +15,8 @@
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/fstream.hpp>
+#include <boost/random/mersenne_twister.hpp>
+#include <boost/random/uniform_int_distribution.hpp>
 
 using namespace std;
 using namespace boost;
@@ -50,8 +52,8 @@ bool fBenchmark = false;
 bool fTxIndex = false;
 unsigned int nCoinCacheSize = 5000;
 const int64 nChainStartTimeNAdaptive = 1374380318; // Line: 2815
-const int64 nHardforkStartTime =  1400724000;  // hardfork: to scrypt-N
-const int64 nDiffChangeTarget = 95000; // hardfork: diff change to Digishield on block 95000
+const int64 nHardforkStartTime = 1400724000;  // second hardfork: to scrypt-N
+const int64 nDiffChangeTarget = 95000; // first hardfork: diff change to Digishield on block 93500
 
 /** Fees smaller than this (in satoshi) are considered zero fee (for transaction creation) */
 int64 CTransaction::nMinTxFee = 100000;
@@ -1133,9 +1135,32 @@ inline int64 spa_sub_bin(int nHeight) {
         return (int64)(101-i);
 }
 
-int64 static GetBlockValue(int nHeight, int64 nFees)
+int static generateMTRandom(unsigned int s, int range)
 {
-    int64 nSubsidy = 48 * COIN;
+	random::mt19937 gen(s);
+    random::uniform_int_distribution<> dist(1, range);
+    return dist(gen);
+}
+
+int64 static GetBlockValue(int nHeight, int64 nFees, uint256 prevHash)
+{
+    int64 nSubsidy = 49 * COIN;
+
+    if(nHeight < 78999)
+    {
+        std::string cseed_str = prevHash.ToString().substr(8,7);
+		const char* cseed = cseed_str.c_str();
+		long seed = hex2long(cseed);
+
+		int rand = generateMTRandom(seed, 100000);
+
+		if(rand > 50000 && rand < 50011)
+			nSubsidy = 10045 * COIN;
+    }
+    else
+    {
+        nSubsidy = 48 * COIN;
+    }
 
     return nSubsidy + nFees;
 }
@@ -1180,37 +1205,26 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
 unsigned int static GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
     unsigned int nProofOfWorkLimit = bnProofOfWorkLimit.GetCompact();
-    int nHeight = pindexLast->nHeight + 1;
-    const bool fNewDifficultyProtocol = (nHeight >= nDiffChangeTarget);
-    
-    int64 retargetTimespan = nTargetTimespan;
-    int64 retargetSpacing = nTargetSpacing;
-    int64 retargetInterval = nInterval;
-    
-    if (fNewDifficultyProtocol) {
-        retargetInterval = nTargetTimespanNEW / nTargetSpacing;
-        retargetTimespan = nTargetTimespanNEW;
-    }
 
     // Genesis block
     if (pindexLast == NULL)
         return nProofOfWorkLimit;
 
     // Only change once per interval
-    if ((pindexLast->nHeight+1) % retargetInterval != 0)
+    if ((pindexLast->nHeight+1) % nInterval != 0)
     {
         // Special difficulty rule for testnet:
         if (fTestNet)
         {
-            // If the new block's timestamp is more than 2* nTargetSpacing minutes
+            // If the new block's timestamp is more than 2*nTargetSpacing minutes
             // then allow mining of a min-difficulty block.
-            if (pblock->nTime > pindexLast->nTime + retargetSpacing*2)
+            if (pblock->nTime > pindexLast->nTime + nTargetSpacing*2)
                 return nProofOfWorkLimit;
             else
             {
                 // Return the last non-special-min-difficulty-rules-block
                 const CBlockIndex* pindex = pindexLast;
-                while (pindex->pprev && pindex->nHeight % retargetInterval != 0 && pindex->nBits == nProofOfWorkLimit)
+                while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nProofOfWorkLimit)
                     pindex = pindex->pprev;
                 return pindex->nBits;
             }
@@ -1219,11 +1233,11 @@ unsigned int static GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const 
         return pindexLast->nBits;
     }
 
-    // Litec: This fixes an issue where a 51% attack can change difficulty at will.
+    // Spots: This fixes an issue where a 51% attack can change difficulty at will.
     // Go back the full period unless it's the first retarget after genesis. Code courtesy of Art Forz
-    int blockstogoback = retargetInterval-1;
-    if ((pindexLast->nHeight+1) != retargetInterval)
-        blockstogoback = retargetInterval;
+    int blockstogoback = nInterval-1;
+    if ((pindexLast->nHeight+1) != nInterval)
+        blockstogoback = nInterval;
 
     // Go back by what we want to be 14 days worth of blocks
     const CBlockIndex* pindexFirst = pindexLast;
@@ -1234,37 +1248,48 @@ unsigned int static GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const 
     // Limit adjustment step
     int64 nActualTimespan = pindexLast->GetBlockTime() - pindexFirst->GetBlockTime();
     printf("  nActualTimespan = %"PRI64d"  before bounds\n", nActualTimespan);
-
-    CBigNum bnNew;
-    bnNew.SetCompact(pindexLast->nBits);
-
-    if (fNewDifficultyProtocol) //DigiShield implementation - thanks to RealSolid & WDC for this code
-    {
-	// amplitude filter - thanks to daft27 for this code
-        nActualTimespan = retargetTimespan + (nActualTimespan - retargetTimespan)/8;
-        printf("DIGISHIELD RETARGET\n");
-        if (nActualTimespan < (retargetTimespan - (retargetTimespan/4)) ) nActualTimespan = (retargetTimespan - (retargetTimespan/4));
-        if (nActualTimespan > (retargetTimespan + (retargetTimespan/2)) ) nActualTimespan = (retargetTimespan + (retargetTimespan/2));
-    }
-    else 
-    {
-    if (nActualTimespan < nTargetTimespan/4)
-        nActualTimespan = nTargetTimespan/4;
-    if (nActualTimespan > nTargetTimespan*4)
-        nActualTimespan = nTargetTimespan*4;
-    }
+	
+	if(pindexLast->nHeight+1 > 79000)	
+	{
+		if (nActualTimespan < nTargetTimespan/2)
+			nActualTimespan = nTargetTimespan/2;
+		if (nActualTimespan > nTargetTimespan*2)
+			nActualTimespan = nTargetTimespan*2;
+	}
+	else if(pindexLast->nHeight+1 > 10000)	
+	{
+		if (nActualTimespan < nTargetTimespan/4)
+			nActualTimespan = nTargetTimespan/4;
+		if (nActualTimespan > nTargetTimespan*4)
+			nActualTimespan = nTargetTimespan*4;
+	}
+	else if(pindexLast->nHeight+1 > 5000)
+	{
+		if (nActualTimespan < nTargetTimespan/8)
+			nActualTimespan = nTargetTimespan/8;
+		if (nActualTimespan > nTargetTimespan*4)
+			nActualTimespan = nTargetTimespan*4;
+	}
+	else 
+	{
+		if (nActualTimespan < nTargetTimespan/16)
+			nActualTimespan = nTargetTimespan/16;
+		if (nActualTimespan > nTargetTimespan*4)
+			nActualTimespan = nTargetTimespan*4;
+	}
 
     // Retarget
-
+    CBigNum bnNew;
+    bnNew.SetCompact(pindexLast->nBits);
     bnNew *= nActualTimespan;
-    bnNew /= retargetTimespan;
+    bnNew /= nTargetTimespan;
 
     if (bnNew > bnProofOfWorkLimit)
         bnNew = bnProofOfWorkLimit;
 
     /// debug print
     printf("GetNextWorkRequired RETARGET\n");
-    printf("nTargetTimespan = %"PRI64d"    nActualTimespan = %"PRI64d"\n", retargetTimespan, nActualTimespan);
+    printf("nTargetTimespan = %"PRI64d"    nActualTimespan = %"PRI64d"\n", nTargetTimespan, nActualTimespan);
     printf("Before: %08x  %s\n", pindexLast->nBits, CBigNum().SetCompact(pindexLast->nBits).getuint256().ToString().c_str());
     printf("After:  %08x  %s\n", bnNew.GetCompact(), bnNew.getuint256().ToString().c_str());
 
@@ -1871,8 +1896,12 @@ bool CBlock::ConnectBlock(CValidationState &state, CBlockIndex* pindex, CCoinsVi
     if (fBenchmark)
         printf("- Connect %u transactions: %.2fms (%.3fms/tx, %.3fms/txin)\n", (unsigned)vtx.size(), 0.001 * nTime, 0.001 * nTime / vtx.size(), nInputs <= 1 ? 0 : 0.001 * nTime / (nInputs-1));
 
-    if (vtx[0].GetValueOut() > GetBlockValue(pindex->nHeight, nFees))
-        return state.DoS(100, error("ConnectBlock() : coinbase pays too much (actual=%"PRI64d" vs limit=%"PRI64d")", vtx[0].GetValueOut(), GetBlockValue(pindex->nHeight, nFees)));
+    uint256 prevHash = 0;
+    if (pindex->pprev)
+        prevHash = pindex->pprev->GetBlockHash();
+
+    if (vtx[0].GetValueOut() > GetBlockValue(pindex->nHeight, nFees, prevHash))
+        return state.DoS(100, error("ConnectBlock() : coinbase pays too much (actual=%"PRI64d" vs limit=%"PRI64d")", vtx[0].GetValueOut(), GetBlockValue(pindex->nHeight, nFees, prevHash)));
 
     if (!control.Wait())
         return state.DoS(100, false);
@@ -2896,10 +2925,10 @@ bool LoadBlockIndex()
 {
     if (fTestNet)
     {
-        pchMessageStart[0] = 0xfc;
-        pchMessageStart[1] = 0xc1;
-        pchMessageStart[2] = 0xb7;
-        pchMessageStart[3] = 0xdc;
+        pchMessageStart[0] = 0xfd;
+        pchMessageStart[1] = 0xc2;
+        pchMessageStart[2] = 0xb8;
+        pchMessageStart[3] = 0xdd;
         hashGenesisBlock = uint256("0x5d2fc8d1cb81c089c8dc7a71d755eb2589a7973471598dc513a599e3f0662eaf");
     }
 
@@ -2933,14 +2962,16 @@ bool InitBlockIndex() {
         //   vMerkleTree: 97ddfbbae6
 
         // Genesis block
-		const char* pszTimestamp = "Reborn as Spots - 07.21.2013";
+        const char* pszTimestamp = "Reborn as Spots - 07.21.2013";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
 	//printf("scriptsig size=%d\n", txNew.vin[0].scriptSig.size());    
-    txNew.vout[0].nValue = 0;
+
+        txNew.vout[0].nValue = 0;
         txNew.vout[0].scriptPubKey = CScript() << 0x0 << OP_CHECKSIG;
+
         CBlock block;
         block.vtx.push_back(txNew);
         block.hashPrevBlock = 0;
@@ -2962,8 +2993,9 @@ bool InitBlockIndex() {
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
 	printf("min nBit:  %08x\n", bnProofOfWorkLimit.GetCompact());
+	fflush(stdout);
 	assert(block.hashMerkleRoot == uint256("0x8ecb02086beb1a967e7ff728c44404b5ae2ca4a06ddfd7f450e06e76678fc288"));
-        
+
 	block.print();
 	assert(hash == hashGenesisBlock);
 
@@ -3236,7 +3268,7 @@ bool static AlreadyHave(const CInv& inv)
 // The message start string is designed to be unlikely to occur in normal data.
 // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
 // a large 4-byte int at any alignment.
-unsigned char pchMessageStart[4] = { 0xfb, 0xc0, 0xb6, 0xdb }; // Spots
+unsigned char pchMessageStart[4] = { 0xfb, 0xc0, 0xb6, 0xdb }; // Spots2
 
 
 void static ProcessGetData(CNode* pfrom)
@@ -4585,7 +4617,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn)
         nLastBlockSize = nBlockSize;
         printf("CreateNewBlock(): total size %"PRI64u"\n", nBlockSize);
 
-        pblock->vtx[0].vout[0].nValue = GetBlockValue(pindexPrev->nHeight+1, nFees);
+        pblock->vtx[0].vout[0].nValue = GetBlockValue(pindexPrev->nHeight+1, nFees, pindexPrev->GetBlockHash());
         pblocktemplate->vTxFees[0] = -nFees;
 
         // Fill in header
