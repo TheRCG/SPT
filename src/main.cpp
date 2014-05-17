@@ -1165,7 +1165,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees, uint256 prevHash)
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 14 * 60; // 14 mins
+static const int64 nTargetTimespan = 3 * 60; // 3 mins
 static const int64 nTargetTimespanNEW = 70; // Spots: every block (70 seconds) (digishield)
 static const int64 nTargetSpacing = 70; // Spots2: 70 seconds
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
@@ -1186,10 +1186,10 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
     while (nTime > 0 && bnResult < bnProofOfWorkLimit)
     {
         if (nBestHeight+1<nDiffChangeTarget) { 
-        // Maximum 400% adjustment...
-        bnResult *= 4;
-        // ... in best-case exactly 4-times-normal target time
-        nTime -= nTargetTimespan*4;
+	        // Maximum 200% adjustment...
+        	bnResult *= 2;
+	        // ... in best-case exactly 2-times-normal target time
+        	nTime -= nTargetTimespan*2;
         } else { //digishield
             // Maximum 10% adjustment...
             bnResult = (bnResult * 110) / 100;
@@ -1248,15 +1248,15 @@ unsigned int static GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const 
     // Limit adjustment step
     int64 nActualTimespan = pindexLast->GetBlockTime() - pindexFirst->GetBlockTime();
     printf("  nActualTimespan = %"PRI64d"  before bounds\n", nActualTimespan);
-	
-	if(pindexLast->nHeight+1 > 79000)	
+
+	if(pindexLast->nHeight+1 > 79000)
 	{
 		if (nActualTimespan < nTargetTimespan/2)
 			nActualTimespan = nTargetTimespan/2;
 		if (nActualTimespan > nTargetTimespan*2)
 			nActualTimespan = nTargetTimespan*2;
 	}
-	else if(pindexLast->nHeight+1 > 10000)	
+	else if(pindexLast->nHeight+1 > 10000)
 	{
 		if (nActualTimespan < nTargetTimespan/4)
 			nActualTimespan = nTargetTimespan/4;
@@ -1364,10 +1364,10 @@ unsigned int static GetNextWorkRequired_V2(const CBlockIndex* pindexLast, const 
 
 unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
-    if (pindexLast->nHeight+1<51 || pindexLast->nHeight+1>=nDiffChangeTarget)
-        return GetNextWorkRequired_V1(pindexLast, pblock); //fast retarget (first blocks) OR DigiShield retarget (every block)
-		else
-			return GetNextWorkRequired_V2(pindexLast, pblock); //kgw retarget
+    if (pindexLast->nHeight+1 >= nDiffChangeTarget)
+        return GetNextWorkRequired_V2(pindexLast, pblock); //kgw retarget
+    else
+        return GetNextWorkRequired_V1(pindexLast, pblock); //original retarget
 }
 
 
@@ -2367,8 +2367,10 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
         nHeight = pindexPrev->nHeight+1;
 
         // Check proof of work
-        if (nBits != GetNextWorkRequired(pindexPrev, this))
+        if (nBits != GetNextWorkRequired(pindexPrev, this)) {
+            printf("AcceptBlock() : incorrect proof of work : %u / %u\n", nBits, GetNextWorkRequired(pindexPrev, this));
             return state.DoS(100, error("AcceptBlock() : incorrect proof of work"));
+        }
 
         // Check timestamp against prev
         if (GetBlockTime() <= pindexPrev->GetMedianTimePast())
