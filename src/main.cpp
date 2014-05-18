@@ -51,7 +51,7 @@ bool fReindex = false;
 bool fBenchmark = false;
 bool fTxIndex = false;
 unsigned int nCoinCacheSize = 5000;
-const int64 nChainStartTimeNAdaptive = 1400724000; // hardfork: switch to Scrypt-N
+const int64 nChainStartTimeNAdaptive = 1389306217; // hardfork: switch to Scrypt-N
 const int64 nHardforkStartTime = 1400724000; // hardfork: switch to Scrypt-N
 const int64 nDiffChangeTarget = 95000; // hardfork: switch to KGW
 
@@ -1165,8 +1165,8 @@ int64 static GetBlockValue(int nHeight, int64 nFees, uint256 prevHash)
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 3 * 60; // 3 mins
-static const int64 nTargetTimespanNEW = 70; // Spots: every block (70 seconds) (digishield)
+static const int64 nTargetTimespan = 3 * 60; // 3 minutes
+static const int64 nTargetTimespanNEW = 70; // Spots: every 2 blocks (140 seconds)
 static const int64 nTargetSpacing = 70; // Spots2: 70 seconds
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
@@ -1336,14 +1336,14 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const CBloc
                 EventHorizonDeviation = 1 + (0.7084 * pow((double(PastBlocksMass)/double(28.2)), -1.228));
                 EventHorizonDeviationFast = EventHorizonDeviation;
                 EventHorizonDeviationSlow = 1 / EventHorizonDeviation;
-                
+
                 if (PastBlocksMass >= PastBlocksMin) {
                         if ((PastRateAdjustmentRatio <= EventHorizonDeviationSlow) || (PastRateAdjustmentRatio >= EventHorizonDeviationFast)) { assert(BlockReading); break; }
                 }
                 if (BlockReading->pprev == NULL) { assert(BlockReading); break; }
                 BlockReading = BlockReading->pprev;
         }
-        
+
         CBigNum bnNew(PastDifficultyAverage);
         if (PastRateActualSeconds != 0 && PastRateTargetSeconds != 0) {
                 bnNew *= PastRateActualSeconds;
@@ -1356,14 +1356,19 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const CBloc
 
 unsigned int static GetNextWorkRequired_V2(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
-        static const int64 BlocksTargetSpacing = 70; // 2 minutes for Spots2
+        static const int64 BlocksTargetSpacing = 70; // 70 seconds
         static const unsigned int TimeDaySeconds = 60 * 60 * 24;
         int64 PastSecondsMin = TimeDaySeconds * 0.01; // 0.25 in megacoin, 0.01 in some others
         int64 PastSecondsMax = TimeDaySeconds * 0.14; // 7 days in megacoin, 0.14 in some others
         uint64 PastBlocksMin = PastSecondsMin / BlocksTargetSpacing;
         uint64 PastBlocksMax = PastSecondsMax / BlocksTargetSpacing;
-        
-        return KimotoGravityWell(pindexLast, pblock, BlocksTargetSpacing, PastBlocksMin, PastBlocksMax);
+
+        unsigned int diff = KimotoGravityWell(pindexLast, pblock, BlocksTargetSpacing, PastBlocksMin, PastBlocksMax);
+        /// debug print
+        printf("GetNextWorkRequired RETARGET-KGW\n");
+        printf("Before: %08x\n", pindexLast->nBits);
+        printf("After:  %08x\n", diff);
+	return diff;
 }
 
 unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
