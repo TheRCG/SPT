@@ -28,9 +28,9 @@ information or see http://opensource.org/licenses/MIT.
 Ports / Important Details
 -------------------------
 
-RPCPORT=5587
-P2PPORT=4588 (Note: Even though documented otherwise Spots has always been on port 4588 due to an error in the v1 code)
-RPC Test Net = 15587
-P2P Test Net = 15588
+ - RPCPORT=5587
+ - P2PPORT=4588 (Note: Even though documented otherwise Spots has always been on port 4588 due to an error in the v1 code)
+ - RPC Test Net = 15587
+ - P2P Test Net = 15588
 
 Scrypt-N & Kimoto's Gravity Well Fork - TBD
