@@ -51,9 +51,8 @@ bool fReindex = false;
 bool fBenchmark = false;
 bool fTxIndex = false;
 unsigned int nCoinCacheSize = 5000;
-const int64 nChainStartTimeNAdaptive = 1389306217; // hardfork: switch to Scrypt-N
-const int64 nHardforkStartTime = 1400724000; // hardfork: switch to Scrypt-N
-const int64 nDiffChangeTarget = 95000; // hardfork: switch to KGW
+const int64 nChainStartTimeNAdaptive = 1389306217; // Scrypt-N N-Factor start time
+const int64 nHardforkStartTime = 1401580800; // hardfork: switch to Scrypt-N/KGW - June 1st, 2014 00:00:00 GMT.
 
 /** Fees smaller than this (in satoshi) are considered zero fee (for transaction creation) */
 int64 CTransaction::nMinTxFee = 10000000;
@@ -1084,7 +1083,7 @@ const unsigned char maxNfactor = 30;
 unsigned char GetNfactor(int64 nTimestamp) {
     int l = 0;
 
-    if (nTimestamp <= nHardforkStartTime)
+    if (nTimestamp < nHardforkStartTime)
         return 9; // standard Scrypt
 
     if (nTimestamp <= nChainStartTimeNAdaptive)
@@ -1185,16 +1184,16 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
     bnResult.SetCompact(nBase);
     while (nTime > 0 && bnResult < bnProofOfWorkLimit)
     {
-        if (nBestHeight+1<nDiffChangeTarget) { 
+        if (nTime < nHardforkStartTime) { 
 	        // Maximum 200% adjustment...
         	bnResult *= 2;
 	        // ... in best-case exactly 2-times-normal target time
         	nTime -= nTargetTimespan*2;
-        } else { //digishield
-            // Maximum 10% adjustment...
-            bnResult = (bnResult * 110) / 100;
-            // ... in best-case exactly 4-times-normal target time
-            nTime -= nTargetTimespanNEW*4;
+        } else {
+          // Maximum 10% adjustment...
+          bnResult = (bnResult * 110) / 100;
+          // ... in best-case exactly 4-times-normal target time
+          nTime -= nTargetTimespanNEW*4;
         }
     }
     if (bnResult > bnProofOfWorkLimit)
@@ -1373,7 +1372,7 @@ unsigned int static GetNextWorkRequired_V2(const CBlockIndex* pindexLast, const 
 
 unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
-    if (pindexLast->nHeight+1 >= nDiffChangeTarget)
+    if (pblock->nTime >= nHardforkStartTime)
         return GetNextWorkRequired_V2(pindexLast, pblock); //kgw retarget
     else
         return GetNextWorkRequired_V1(pindexLast, pblock); //original retarget
@@ -3452,7 +3451,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
         {
             badVersion = true;
         }
-        if (pfrom->nVersion < 60201 && (nBestHeight >= nDiffChangeTarget || GetTime() >= nHardforkStartTime))
+        if (pfrom->nVersion < 60201 && GetTime() >= nHardforkStartTime)
         {
             badVersion = true;
         }
