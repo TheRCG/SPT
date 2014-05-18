@@ -51,9 +51,9 @@ bool fReindex = false;
 bool fBenchmark = false;
 bool fTxIndex = false;
 unsigned int nCoinCacheSize = 5000;
-const int64 nChainStartTimeNAdaptive = 1374380318; // Line: 2815
-const int64 nHardforkStartTime = 1400724000;  // second hardfork: to scrypt-N
-const int64 nDiffChangeTarget = 95000; // first hardfork: diff change to Digishield on block 93500
+const int64 nChainStartTimeNAdaptive = 1400724000; // hardfork: switch to Scrypt-N
+const int64 nHardforkStartTime = 1400724000; // hardfork: switch to Scrypt-N
+const int64 nDiffChangeTarget = 95000; // hardfork: switch to KGW
 
 /** Fees smaller than this (in satoshi) are considered zero fee (for transaction creation) */
 int64 CTransaction::nMinTxFee = 10000000;
@@ -1314,20 +1314,24 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const CBloc
         
     if (BlockLastSolved == NULL || BlockLastSolved->nHeight == 0 || (uint64)BlockLastSolved->nHeight < PastBlocksMin) { return bnProofOfWorkLimit.GetCompact(); }
         
+	int64 LatestBlockTime = BlockLastSolved->GetBlockTime();
         for (unsigned int i = 1; BlockReading && BlockReading->nHeight > 0; i++) {
                 if (PastBlocksMax > 0 && i > PastBlocksMax) { break; }
                 PastBlocksMass++;
-                
+
                 if (i == 1) { PastDifficultyAverage.SetCompact(BlockReading->nBits); }
                 else { PastDifficultyAverage = ((CBigNum().SetCompact(BlockReading->nBits) - PastDifficultyAveragePrev) / i) + PastDifficultyAveragePrev; }
                 PastDifficultyAveragePrev = PastDifficultyAverage;
-                
-                PastRateActualSeconds = BlockLastSolved->GetBlockTime() - BlockReading->GetBlockTime();
+
+		if (LatestBlockTime < BlockReading->GetBlockTime()) {
+                    LatestBlockTime = BlockReading->GetBlockTime();
+		}
+                PastRateActualSeconds = LatestBlockTime - BlockReading->GetBlockTime();
                 PastRateTargetSeconds = TargetBlocksSpacingSeconds * PastBlocksMass;
                 PastRateAdjustmentRatio = double(1);
-                if (PastRateActualSeconds < 0) { PastRateActualSeconds = 0; }
+		if (PastRateActualSeconds < 1) { PastRateActualSeconds = 1; }
                 if (PastRateActualSeconds != 0 && PastRateTargetSeconds != 0) {
-                PastRateAdjustmentRatio = double(PastRateTargetSeconds) / double(PastRateActualSeconds);
+                    PastRateAdjustmentRatio = double(PastRateTargetSeconds) / double(PastRateActualSeconds);
                 }
                 EventHorizonDeviation = 1 + (0.7084 * pow((double(PastBlocksMass)/double(28.2)), -1.228));
                 EventHorizonDeviationFast = EventHorizonDeviation;
@@ -1352,7 +1356,7 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const CBloc
 
 unsigned int static GetNextWorkRequired_V2(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
-        static const int64 BlocksTargetSpacing = 2 * 60; // 2 minutes for Spots2
+        static const int64 BlocksTargetSpacing = 70; // 2 minutes for Spots2
         static const unsigned int TimeDaySeconds = 60 * 60 * 24;
         int64 PastSecondsMin = TimeDaySeconds * 0.01; // 0.25 in megacoin, 0.01 in some others
         int64 PastSecondsMax = TimeDaySeconds * 0.14; // 7 days in megacoin, 0.14 in some others
