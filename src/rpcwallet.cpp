@@ -19,6 +19,8 @@ using namespace json_spirit;
 int64 nWalletUnlockTime;
 static CCriticalSection cs_nWalletUnlockTime;
 
+extern void TxToJSON(const CTransaction& tx, const uint256 hashBlock, Object& entry);
+
 std::string HelpRequiringPassphrase()
 {
     return pwalletMain && pwalletMain->IsCrypted()
@@ -1230,14 +1232,14 @@ Value gettransaction(const Array& params, bool fHelp)
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "gettransaction <txid>\n"
-            "Get detailed information about in-wallet transaction <txid>");
+            "Get detailed information about <txid>");
 
     uint256 hash;
     hash.SetHex(params[0].get_str());
 
     Object entry;
-    if (!pwalletMain->mapWallet.count(hash))
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid or non-wallet transaction id");
+    if (pwalletMain->mapWallet.count(hash))
+    {
     const CWalletTx& wtx = pwalletMain->mapWallet[hash];
 
     int64 nCredit = wtx.GetCredit();
@@ -1254,6 +1256,38 @@ Value gettransaction(const Array& params, bool fHelp)
     Array details;
     ListTransactions(wtx, "*", 0, false, details);
     entry.push_back(Pair("details", details));
+    }
+    else
+    {
+        CTransaction tx;
+        uint256 hashBlock = 0;
+        if (GetTransaction(hash, tx, hashBlock, true))
+        {
+            entry.push_back(Pair("txid", hash.GetHex()));
+            TxToJSON(tx, 0, entry);
+            if (hashBlock == 0)
+                entry.push_back(Pair("confirmations", 0));
+            else
+            {
+                entry.push_back(Pair("blockhash", hashBlock.GetHex()));
+                map<uint256, CBlockIndex*>::iterator mi = mapBlockIndex.find(hashBlock);
+                if (mi != mapBlockIndex.end() && (*mi).second)
+                {
+                    CBlockIndex* pindex = (*mi).second;
+                    if (pindex->IsInMainChain())
+                    {
+                        entry.push_back(Pair("confirmations", 1 + nBestHeight - pindex->nHeight));
+                        //entry.push_back(Pair("txntime", (boost::int64_t)tx.nTime));
+                        entry.push_back(Pair("time", (boost::int64_t)pindex->nTime));
+                    }
+                    else
+                        entry.push_back(Pair("confirmations", 0));
+                }
+            }
+        }
+        else
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "No information available about transaction");
+    }
 
     return entry;
 }
