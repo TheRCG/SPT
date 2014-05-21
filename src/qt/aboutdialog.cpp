@@ -17,8 +17,9 @@ AboutDialog::AboutDialog(QWidget *parent) :
     // Set current copyright year
     ui->copyrightLabel->setText(tr("Copyright") + QString(" &copy; 2009-%1 ").arg(COPYRIGHT_YEAR) + tr("The Bitcoin developers") + QString("<br>") +
 								tr("Copyright") + QString(" &copy; ") + tr("2011-2014 The Litecoin developers") + QString("<br>") +
-								tr("Copyright") + QString(" &copy; ") + tr("2014-%1 The Spots2 developers").arg(ABOUTDIALOG_COPYRIGHT_YEAR)
+								tr("Copyright") + QString(" &copy; ") + tr("2014 The Spots2 developers")
 			);
+//								tr("Copyright") + QString(" &copy; ") + tr("2014-%1 The Spots2 developers").arg(ABOUTDIALOG_COPYRIGHT_YEAR)
 }
 
 void AboutDialog::setModel(ClientModel *model)
