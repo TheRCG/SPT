@@ -5,11 +5,11 @@
 # :=0 --> UPnP support turned off by default at runtime
 # :=1 --> UPnP support turned on by default at runtime
 # :=- --> No UPnP support - miniupnp not required
-USE_UPNP:=0
+USE_UPNP:=-
 
 # :=1 --> Enable IPv6 support
 # :=0 --> Disable IPv6 support
-USE_IPV6:=1
+USE_IPV6:=0
 
 LINK:=$(CXX)
 
@@ -126,6 +126,7 @@ OBJS= \
     obj/net.o \
     obj/protocol.o \
     obj/bitcoinrpc.o \
+    obj/rpcalert.o \
     obj/rpcdump.o \
     obj/rpcnet.o \
     obj/rpcmining.o \

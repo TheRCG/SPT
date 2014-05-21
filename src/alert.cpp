@@ -19,8 +19,7 @@ using namespace std;
 map<uint256, CAlert> mapAlerts;
 CCriticalSection cs_mapAlerts;
 
-//litecoin key removed - checksignature below also patched
-static const char* pszMainKey = "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+static const char* pszMainKey = "0480d0870e9bef31584125ca85b3889bbc0682d0373cbac95260707b30689aac3682946576e3970b4419660bc9840acb9ae3e006fdd203121756b99393e0577a6b";
 static const char* pszTestKey = "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
 
 void CUnsignedAlert::SetNull()
@@ -145,9 +144,6 @@ bool CAlert::RelayTo(CNode* pnode) const
 
 bool CAlert::CheckSignature() const
 {
-	//FIXME
-    return error("CAlert::CheckSignature() : verify signature failed");
-
     CPubKey key(ParseHex(fTestNet ? pszTestKey : pszMainKey));
     if (!key.Verify(Hash(vchMsg.begin(), vchMsg.end()), vchSig))
         return error("CAlert::CheckSignature() : verify signature failed");
