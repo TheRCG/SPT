@@ -1304,6 +1304,9 @@ void ThreadOpenConnections()
             MilliSleep(500);
         }
     }
+   
+    if (addrman.size()==0 && !fTestNet)
+        AddSeedNodes();    
 
     // Initiate network connections
     int64 nStart = GetTime();
@@ -1317,7 +1320,7 @@ void ThreadOpenConnections()
         boost::this_thread::interruption_point();
 
         // Add seed nodes if DNS seeds aren't working
-        if (addrman.size()==0 && (GetTime() - nStart > 60) && !fTestNet)
+        if (addrman.size()==0 && (GetTime() - nStart >= 60) && !fTestNet)
 	        AddSeedNodes();
 
         //
