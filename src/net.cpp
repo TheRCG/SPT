@@ -1265,7 +1265,7 @@ void static ProcessOneShot()
 static const char * pnSeed[] =
 {
 	"107.170.140.109",
-	"162.243.15.107"
+	"192.99.37.224"
 };
 
 void AddSeedNodes() {
