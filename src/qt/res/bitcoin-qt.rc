@@ -20,13 +20,13 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "InternalName",       "spots2-qt"
+            VALUE "InternalName",       "Spots2-Qt"
             VALUE "CompanyName",        "Spots2 Developers"
             VALUE "FileDescription",    "Spots2-Qt (OSS GUI client for Spots2)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "spots2-qt.exe"
+            VALUE "OriginalFilename",   "Spots2-Qt.exe"
             VALUE "ProductName",        "Spots2-Qt"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
