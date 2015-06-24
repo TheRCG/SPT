@@ -5,14 +5,14 @@ http://www.theSPT.com/
 
 Copyright (c) 2009-2013 Bitcoin Developers
 Copyright (c) 2011-2013 Litecoin Developers
-Copyright (c) 2014 Spots2 Developers
+Copyright (c) 2014-2015 Spots2 Developers
 
 What is Spots2?
 ----------------
 
 Spots2 (SPT) is a lite version of Bitcoin using scrypt-adaptive-N as a proof-of-work algorithm.
  - 70 second block targets
- - 48 coins per block
+ - reduction coins per block
  - Retarget every block (Kimoto's gravity well)
 
 For more information, as well as an immediately useable, binary version of
@@ -34,12 +34,12 @@ Ports / Important Details
  - RPC Test Net = 15587
  - P2P Test Net = 15588
 
-Scrypt-N & Kimoto's Gravity Well Fork - June 1st, 2014 00:00:00 GMT
+Scrypt & Kimoto's Gravity Well Fork - September 20, 2014 00:00:00 GMT
 
 Web Pages
 ---------
 Main Page - http://www.theSPT.com/
-Block Explorer - http://Explore.theSPT.com/
+Block Explorer - http://www.crypto2.net/spots/
 Official Pool - http://Mine.theSPT.com/
 Paper Wallet - Coming Soon
 Forums - Comining Soon
