@@ -10,7 +10,7 @@ Copyright (c) 2014-2015 Spots2 Developers
 What is Spots2?
 ----------------
 
-Spots2 (SPT) is a lite version of Bitcoin using scrypt-adaptive-N as a proof-of-work algorithm.
+Spots2 (SPT) is a lite version of Bitcoin using scrypt as a proof-of-work algorithm.
  - 70 second block targets
  - reduction coins per block
  - Retarget every block (Kimoto's gravity well)
