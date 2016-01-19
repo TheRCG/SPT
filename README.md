@@ -1,11 +1,11 @@
 Spots2 integration/staging tree
 ================================
 
-http://www.theSPT.com/
+http://www.spt.22web.org
 
 Copyright (c) 2009-2013 Bitcoin Developers
 Copyright (c) 2011-2013 Litecoin Developers
-Copyright (c) 2014-2015 Spots2 Developers
+Copyright (c) 2014-2016 TheRCG Developers
 
 What is Spots2?
 ----------------
@@ -16,7 +16,7 @@ Spots2 (SPT) is a lite version of Bitcoin using scrypt as a proof-of-work algori
  - Retarget every block (Kimoto's gravity well)
 
 For more information, as well as an immediately useable, binary version of
-the Spots2 client sofware, see http://www.theSPT.com/
+the Spots2 client sofware, see http://www.spt.22web.org
 
 
 License
@@ -38,9 +38,9 @@ Scrypt & Kimoto's Gravity Well Fork - September 20, 2014 00:00:00 GMT
 
 Web Pages
 ---------
-Main Page - http://www.theSPT.com/
-Block Explorer - http://www.crypto2.net/spots/
-Official Pool - http://Mine.theSPT.com/
-Paper Wallet - Coming Soon
-Forums - Comining Soon
+Main Page - http://www.spt.22web.org
+Block Explorer - http://51.255.6.35:30005/
+Official Pool - https://www.cryptopia.co.nz/MineShaft?pool=SPT
+Paper Wallet - http://www.spt.22web.org/paperwallet/index.html
+Forums - https://bitcointalk.org/index.php?topic=615513.0
 Spots Marketplace - Phase 2
